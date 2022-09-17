@@ -1,7 +1,26 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import generic.First
+import generic.Second
+import generic.Third
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+
+    val first1 = First<Int,String>()
+    first1.type1 = 12
+    first1.type2 = "Keshawy"
+    first1.setValue(12,"Keshawy")
+
+    val first2 = First<String , Int>()
+    first2.type1 = "Mohamed"
+    first2.type2 = 24
+    first2.setValue("Mohamed Keshawy",20)
+
+    val second = Second<String>()
+    second.demo("Mohamed")
+
+    val third = object : Third<Int>(){
+        override fun getValue(): Int {
+            return 12
+        }
+    }
+    println(third.getValue())
 }
